@@ -1,0 +1,14 @@
+## /usr/lib/systemd/system/sniproxy.service
+[Unit]
+Description=sniproxy is a tiny little proxy server capable of proxying https connections.
+Documentation=https://github.com/dlundquist/sniproxy
+After=network.target
+After=syslog.target
+After=network-online.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/sbin/sniproxy
+
+[Install]
+WantedBy=multi-user.target
